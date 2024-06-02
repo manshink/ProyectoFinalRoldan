@@ -28,13 +28,13 @@ class GeneradorContraseña {
         return contraseña.join("");
     }
 
-    async fetchDummyData() {
+    async fetchDataPrueba() {
         try {
-            const response = await fetch('https://jsonplaceholder.typicode.com/posts/1');
-            const data = await response.json();
+            const respuesta = await fetch('https://jsonplaceholder.typicode.com/posts/1');
+            const data = await respuesta.json();
             console.log(data);
         } catch (error) {
-            console.error('Error fetching data:', error);
+            console.error('Error al encontrar la data de la api:', error);
         }
     }
 }
@@ -61,7 +61,7 @@ function generarYMostrarContraseña() {
         document.getElementById('mostrarContraseña').innerText = `La contraseña generada es: ${contraseña}`;
         guardarContraseña(contraseña);
         actualizarListaContraseñas();
-        contraseñaElMaster.fetchDummyData(); 
+        contraseñaElMaster.fetchDataPrueba(); 
     }
 }
 
