@@ -1,6 +1,3 @@
-// Dios mio me salve, la cantidad de pelos de la cabeza que he perdido con este proyecto. 
-//Horas que  no voy a recuperar de mi vida: 24h.
-
 class GeneradorContraseña {
     constructor() {
         this.caracteres = {
@@ -30,6 +27,16 @@ class GeneradorContraseña {
         }
         return contraseña.join("");
     }
+
+    async fetchDummyData() {
+        try {
+            const response = await fetch('https://jsonplaceholder.typicode.com/posts/1');
+            const data = await response.json();
+            console.log(data);
+        } catch (error) {
+            console.error('Error fetching data:', error);
+        }
+    }
 }
     
 const contraseñaElMaster = new GeneradorContraseña();
@@ -54,6 +61,7 @@ function generarYMostrarContraseña() {
         document.getElementById('mostrarContraseña').innerText = `La contraseña generada es: ${contraseña}`;
         guardarContraseña(contraseña);
         actualizarListaContraseñas();
+        contraseñaElMaster.fetchDummyData(); 
     }
 }
 
@@ -61,6 +69,7 @@ function guardarContraseña(contraseña) {
     let contraseñas = JSON.parse(localStorage.getItem('contraseñasGeneradas')) || [];
     contraseñas.push(contraseña);
     localStorage.setItem('contraseñasGeneradas', JSON.stringify(contraseñas));
+    Swal.fire("Contraseña generada con éxito"); 
 }
 
 function actualizarListaContraseñas() {
