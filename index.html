@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/main.css">
+    <title>Generador de contraseñas<aside></aside></title>
+</head>
+<body>
+    <script src="js/main.js"></script>
+    <section id="mainPage">
+        <h1>Generador De Contraseñas</h1>
+        <div id="generadorDeContraseñas">
+            <div>
+                <h2>Ingresa la longitud deseada de la contraseña (Entre 1 y 20)</h2>
+                <input type="number" id="tamañoDeCotraseña" min="1" max="20" placeholder="Longitud de la contraseña">
+                <button onclick="generarYMostrarContraseña(document.getElementById('tamañoDeCotraseña').value)">Generar contraseña</button>
+                <p id="mostrarContraseña"></p>
+                <h3>Contraseñas generadas:</h3>
+                <ul id="listaContraseñas"></ul>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

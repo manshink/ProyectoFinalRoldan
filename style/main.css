@@ -1,0 +1,31 @@
+*{
+    padding: 0;
+    font-family: montserrat, sans-serif;
+}
+
+#mainPage{
+    height: 100%;
+    background-color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#mainPage h1{
+    color: #374151
+}
+
+#generadorDeContraseñas{
+    height: 448px;
+    width: 440px;
+    border: solid 1px;
+    border-radius: 0.5rem;
+    border-color: #e5e7eb;
+    padding: 32px;
+    margin: 32px;
+    background: #ffffff;
+    box-shadow:  20px 20px 60px #ededed,
+                -20px -20px 60px #ffffff;
+
+}
